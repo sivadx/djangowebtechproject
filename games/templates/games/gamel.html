@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'gl.css' %}">
+</head>
+<body>
+<div class="main">
+<div class="left">
+ {% for game in games %}
+	<div style="border-color:black;border-style:solid;" >
+	 <a href="{% url 'games:detail' slug=game.slug %}">{{ game.game_name }}</a>
+	 <p>{{ game.game_publisher }}</p>
+	 <p>{{ game.price }}</p>
+	</div>
+ {% endfor %}
+</div>
+<div class="right">
+<div style="margin:30px">
+<form action="{% url 'accounts:lout' %}" method="post" >
+{% csrf_token %}
+<button type="submit">logout</button>
+
+</form>
+<br>
+<br>
+<br>
+<a href="{% url 'freegame' %}" style="text-decoration:none">FREE GAMES</a>
+<br><br><br>
+<a href="{% url 'accounts:profile' %}" style="text-decoration:none">PROFILE</a>
+</div>
+</div>
+</div>
+</body>
+</html>

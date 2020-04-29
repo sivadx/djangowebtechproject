@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'gl.css' %}">
+</head>
+<body>
+<div class="main">
+<div class="left">
+ <div>
+ <h2 color="#d2a679">{{ game.game_name }}</h2>
+ <p>publisher:{{ game.game_publisher }}</p>
+ <p>description:{{ game.game_description }}</p>
+ <p>price:{{ game.price }}</p>
+ </div>
+ <img src="{{ game.thumb.url }}" margin-top="10px" width="500px" height="500px">
+ {% if game in user.profile.pgames.all %}
+<h2> ALREADY OWNED</h2>
+{% else %}
+<a href="{% url 'accounts:dgame' slug=game.slug %}"> DOWNLOAD </a>
+{% endif %}
+</div>
+
+<div class="right">
+<div style="margin:30px">
+<form action="{% url 'accounts:lout' %}" method="post" >
+{% csrf_token %}
+<button type="submit">logout</button>
+
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
