@@ -1,0 +1,9 @@
+<html>
+<body>
+<form class="site-form" action="{% url 'accounts:reg' %}" method="post">
+{% csrf_token %}
+{{form}}
+<input type="submit" value="register">
+</form>
+</body>
+</html>

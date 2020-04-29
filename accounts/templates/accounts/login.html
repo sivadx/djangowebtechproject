@@ -1,0 +1,9 @@
+<html>
+<body>
+<form class="login-form" action="{% url 'accounts:log' %}" method="post">
+{% csrf_token %}
+{{form}}
+<input type="submit" value="login">
+</form>
+</body>
+</html>

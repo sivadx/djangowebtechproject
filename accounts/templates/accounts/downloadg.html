@@ -1,0 +1,11 @@
+<html>
+<body>
+<p>price:{{ game.price }}</p>
+<p> name:{{ game.game_name }}</p>
+<form action="{% url 'accounts:dgame' slug=game.slug %}" method="post">
+{% csrf_token %}
+{{ form }}<br>
+<input type="submit" value="download">
+</form>
+</body>
+</html>
