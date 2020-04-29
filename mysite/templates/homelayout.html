@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+<header>
+<div class="container">
+<img src="{% static 'gamelogo.png' %}"  class="logo" width="50" height="50">
+<nav>
+<ul>
+<li><a href="{% url 'accounts:log' %}">LOG IN</a></li>
+<li><a href="{% url 'accounts:reg' %}">SIGN UP</a></li>
+</ul>
+</nav>
+
+
+</div>
+</header>
+<div class="main">
+<p class="content">
+WELCOME!!!
+GAMEUTOPIA IS A PLACE WHERE GAMERS CAN BUY DIGITAL GAMES ,OUR INTERACTIVE WEBSITE ALSO OFFERS FREE GAMES THAT CAN BE PLAYED
+PLEASE CONSIDER REGISTERING TO OUR SERVICE</p>
+<
+</div>
+<img src="{% static 'assassin.jpg' %}" width="100%" height="500px">
+
+</body>
+</html>
+
